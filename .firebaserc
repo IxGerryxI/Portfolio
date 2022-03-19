@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "small-projects-224f0"
+  },
+  "targets": {
+    "small-projects-224f0": {
+      "hosting": {
+        "gerrys-portfolio": [
+          "gerrys-portfolio"
+        ]
+      }
+    }
+  }
+}
