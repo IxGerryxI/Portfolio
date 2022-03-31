@@ -44,6 +44,24 @@
       text-align: center;
   }
 
+  input {
+      background: var(--dark);
+      color: var(--light);
+      border: 1px solid var(--primary);
+      padding: 5px 8px;
+  }
+
+  input:focus,
+  input:focus-visible,
+  input:-webkit-autofill,
+  textarea:focus {
+      outline: none;
+  }
+
+  input[type=submit] {
+      margin: 8px 0;
+  }
+
   .tags {
       display: flex;
       flex-wrap: wrap;
@@ -95,6 +113,11 @@
   /****************************************************
   ********************** PROJECTS *********************
   ****************************************************/
+  #projects {
+      background: var(--light);
+      overflow: auto;
+  }
+
   @media screen and (min-width: 550px) {
       #projects .project {
           padding-bottom: 15px;
@@ -279,13 +302,6 @@
       margin-bottom: 15px;
   }
 
-  @media only screen and (min-width: 600px) {
-      .ipt_group {
-          display: flex;
-          justify-content: space-around;
-      }
-  }
-
   .ipt {
       padding: 6px;
       display: flex;
@@ -297,20 +313,33 @@
       margin-right: 12px;
   }
 
-  input {
-      background: var(--dark);
-      color: var(--light);
-      border: 1px solid var(--primary);
-      padding: 5px 8px;
+  @media only screen and (min-width: 600px) {
+      .ipt_group {
+          display: flex;
+          justify-content: space-around;
+      }
   }
 
-  input:focus,
-  input:focus-visible,
-  input:-webkit-autofill,
-  textarea:focus {
-      outline: none;
-  }
+  @media screen and (min-width: 1000px) {
+      #contact form {
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
 
-  input[type=submit] {
-      margin: 8px 0;
+      #contact form .ipt_group {
+          flex-direction: column;
+      }
+
+      #contact form .ipt {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      #contact form input[type=submit] {
+          flex: 1 0 100%;
+      }
+
+      #contact form textarea {
+          flex: 1 0;
+      }
   }
