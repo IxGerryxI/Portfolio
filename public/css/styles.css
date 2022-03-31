@@ -14,6 +14,7 @@
 
   img {
       width: 100%;
+      border: 2px solid;
   }
 
   .img_container {
@@ -94,19 +95,75 @@
   /****************************************************
   ********************** PROJECTS *********************
   ****************************************************/
+  @media screen and (min-width: 550px) {
+      #projects .project {
+          padding-bottom: 15px;
+      }
+
+      .projects_container {
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+      }
+
+      .projects_container article {
+          width: 100%;
+      }
+  }
+
+  @media screen and (min-width: 550px) and (max-width: 950px) {
+      .projects_container article:nth-child(3n+1) {
+          grid-column-start: 1;
+          grid-column-end: 4;
+          aspect-ratio: unset;
+      }
+
+      .projects_container article:nth-child(3n+1) .content_wrapper {
+          display: flex;
+      }
+
+      .projects_container article:nth-child(3n+1) .img_container {
+          max-width: 30%;
+      }
+  }
+
+  @media screen and (min-width: 950px) {
+      .projects_container {
+          grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .projects_container article:nth-child(4n+1) {
+          grid-column-start: 1;
+          grid-column-end: 4;
+          aspect-ratio: unset;
+      }
+
+      .projects_container article:nth-child(4n+1) .content_wrapper {
+          display: flex;
+      }
+
+      .projects_container article:nth-child(4n+1) .img_container {
+          max-width: 30%;
+      }
+  }
+
   #projects .content {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 5px;
   }
 
   .project {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       width: 100%;
-      aspect-ratio: 1;
       background: var(--dark);
       color: var(--light);
+  }
+
+  .project .img_container {
+      max-width: 400px;
+      margin: 0 auto;
   }
 
   .project .action_buttons {
@@ -125,10 +182,13 @@
 
   .project .description {
       text-align: center;
+      padding: 15px;
   }
 
   .project .tags {
       padding: 10px 15px;
+      display: flex;
+      justify-content: center;
   }
 
   .single_project {
